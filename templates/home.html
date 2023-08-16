@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" id="homepage_search">
+    <div class="background-image">
+        <h1 class="homepage_slogan">Discover The Perfect Balance Of Luxuries And Comforts</h1>
+        <div class="search_banner">
+            <form class="row g-3 align-items-center" id="search-form" action="/search" method="post"> 
+                <div class="row g-3 align-items-center">
+                    <div class="col">
+                        <div class="input-group">
+                            <label for="location" class="bi bi-geo-alt-fill input-group-text"></label>
+                            <input type="text" class="form-control" id="location" placeholder="Location">
+                        </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <label for="check-in" class="bi bi-calendar-check-fill input-group-text"></label>
+                                <input type="date" class="form-control" id="check-in" placeholder="Check in" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <label for="check-out" class="bi bi-calendar-check input-group-text"></label>
+                                <input type="date" class="form-control" id="check-out" placeholder="Check out">
+                            </div>
+                        </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <div class="col">
+                        <div class="input-group">
+                            <label for="adults" class="bi bi-person-fill input-group-text"></label>
+                            <input type="text" class="form-control" id="adults" placeholder="Adults">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <label for="children" class="bi bi-person-fill input-group-text"></label>
+                            <input type="text" class="form-control" id="children" placeholder="Children">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <label for="rooms" class="bi bi-house-fill input-group-text"></label>
+                            <input type="text" class="form-control" id="rooms" placeholder="Rooms">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container text-center">
+                    <button id="search-hotel" type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- <div class="container-fluid" id="content">
+    <div class="container-fluid">
+        <h1>Recommended For You</h1>
+    </div>
+    
+    <div class="container-fluid">
+        <h1>Special Offers</h1>
+    </div> -->
+</div>
+{% endblock %}

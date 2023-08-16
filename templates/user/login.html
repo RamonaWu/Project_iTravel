@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-md-center" id="register-page">
+    <div class="col-md-7 col-lg-5" >
+        <h1 class="register-title">Hi! Welcome Back</h1>
+
+        <form method="POST" class="register-form">
+
+            {{form.hidden_tag()}}
+
+            {% for field in form.errors %}
+            <div class="alert alert-danger">{{ field }}:
+                <ul>
+                    {% for error in form.errors[field] %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        
+            {% for field in form if field.widget.input_type != 'hidden' %}
+        
+            <div class="form-floating mb-3">
+                {{field.label(for="floatingInput")}}
+                <div class="form-floating">
+                    {{field(for="floatingInput", class="form-control")}}
+                </div>
+            </div>
+        
+            {% endfor %}
+
+            <div class="container-fluid" id="register-footline">
+                <button id="register-button" class="btn btn-primary">Login</button>
+                <h5>- OR -</h5>
+                <a href="https://twitter.com/i/flow/login"><i class="bi bi-twitter"></i></a>
+                <a href="https://accounts.google.com"><i class="bi bi-google" style="margin-left:20px;"></i></a>
+                <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-left:20px;"></i></a>
+
+                <p>Don't have an account? <a href="/signup">Create Account!</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

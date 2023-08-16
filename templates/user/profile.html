@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="profile-container">
+      <div class="profile-info">
+        <h2>User Profile</h2>
+        <div class="profile-image">
+            <img src="/static/images/default profile image.jpg" alt="profile image">
+        <ul class="profile-list">
+            <li><span class="profile-heading">Email:</span> {{ g.user.email}}</li>
+            <li><span class="profile-heading">Username:</span> {{g.user.username}}</li>
+            <li><span class="profile-heading">Previous Bookings:</span> 3</li>
+        </ul>
+        <a class="btn btn-primary" type="submit" href="/user/{{user_id}}/edit">Edit profile</a>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

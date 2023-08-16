@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Search Results</h1>
+        <ul>
+          {% for hotel in hotel_listing %}
+              <li>
+                <div>
+                  <h2>{{ hotel.hotel_name }}</h2>
+                  <p>Address: {{ hotel.hotel_address }}</p>
+                  <p>City: {{ hotel.hotel_city }}</p>
+                  <p>Review Score: {{ hotel.hotel_review_score }}</p>
+                  <p>Price: {{ hotel.hotel_price }} {{ hotel.currency_code }}</p>
+                  <p>Room: {{ hotel.hotel_room }}</p>
+                  <p><a href="{{ hotel.hotel_url }}">Details</a></p>
+                  <hr>
+                </div>
+                <div>
+                  <img src="{{ hotel.hotel_photo }}" alt="{{ hotel.hotel_name }}">
+                  <a href="{{ hotel.hotel_url }}" target="_blank">See Availability</a>
+                  <a href="/hotel/{{ hotel.hotel_id }}">More Details</a>
+                </div>
+              </li>
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

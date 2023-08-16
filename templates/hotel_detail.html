@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="col-md-8" id="hotel_details">
+    <h1>Hotel Photos and Description</h1>
+    <div id="hotel-photos"></div>
+    <div id="hotel-description"></div>
+
+    <h1>Room Availability</h1>
+    <div id="room-list"></div>
+  </div>
+
+  <a id="reserve" type="submit" class="btn btn-primary" href="/hotel/{{user_id}}/bookings">Reserve</a>
+</div>
+{% endblock %}
